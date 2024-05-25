@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6d446f78-4e68-4c7b-ae62-d1ab8e971a84" name="Changes" comment="" />
+    <list default="true" id="6d446f78-4e68-4c7b-ae62-d1ab8e971a84" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/tests/features/calculator.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/tests/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/step_definitions/steps.ts" beforeDir="false" afterPath="$PROJECT_DIR$/tests/step_definitions/steps.ts" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,21 +18,21 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "red88july"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;red88july&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "git@github.com:red88july/test-ESDP-TGL.git",
-    "accountId": "db273d2a-9cce-428e-83cc-8c263487f9d7"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;git@github.com:red88july/test-ESDP-TGL.git&quot;,
+    &quot;accountId&quot;: &quot;db273d2a-9cce-428e-83cc-8c263487f9d7&quot;
   }
-}]]></component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 4
-}]]></component>
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
   <component name="ProjectId" id="2guczzL1E5zmxbxJYUSiHjF3jN1" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -36,14 +41,14 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "dev",
-    "last_opened_file_path": "/home/mikhail/Attractor/new7ESDP/ESDP-TGL",
+    "git-widget-placeholder": "#2 on TGL-155",
+    "last_opened_file_path": "/home/mikhail/Attractor/new7ESDP/test-ESDP-TGL",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "ts.external.directory.path": "/home/mikhail/Attractor/Tester/test-ESDP-TGL/tests/node_modules/typescript/lib",
+    "ts.external.directory.path": "/home/mikhail/Attractor/new7ESDP/test-ESDP-TGL/tests/node_modules/typescript/lib",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -63,6 +68,8 @@
       <option name="presentableId" value="Default" />
       <updated>1716551169652</updated>
       <workItem from="1716551170653" duration="3146000" />
+      <workItem from="1716556202940" duration="7560000" />
+      <workItem from="1716634122056" duration="2769000" />
     </task>
     <servers />
   </component>
