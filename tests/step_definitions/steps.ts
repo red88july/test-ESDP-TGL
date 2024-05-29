@@ -36,6 +36,7 @@ When('я кликаю по cсылке {string}', (link: string) => {
   I.click(`//a[contains(text(),"${link}")]`);
   I.wait(2);
 });
+
 Then('я вижу сообщение {string}', (text) => {
   I.see(text);
   I.wait(2);
