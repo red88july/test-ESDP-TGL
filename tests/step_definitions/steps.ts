@@ -37,10 +37,7 @@ When('я кликаю по cсылке {string}', (link: string) => {
   I.wait(2);
 });
 
-
-
-
-
-
-
-
+Then('я вижу сообщение {string}', (text) => {
+  I.see(text);
+  I.wait(2);
+});
