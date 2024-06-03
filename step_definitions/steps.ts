@@ -1,4 +1,4 @@
-const {I} = inject();
+const { I } = inject();
 
 Given('Я нахожусь на странице {string}', (page: string) => {
   I.amOnPage(page);
@@ -38,8 +38,8 @@ Then('я вижу сообщение {string}', (text: string) => {
 });
 
 Then('я жду 1 секунду', () => {
-  I.wait(1)
-})
+  I.wait(1);
+});
 
 Then('я перенаправляюсь на страницу {string}', (page: string) => {
   I.seeInCurrentUrl(page);
