@@ -13,17 +13,15 @@ export const config: CodeceptJS.MainConfig = {
     Puppeteer: {
       url: 'http://localhost:5173',
       show: true,
-      windowSize: '1200x900'
-    }
+      windowSize: '1200x900',
+    },
   },
   gherkin: {
-    "features": "./features/*.feature",
-    "steps": [
-        "./step_definitions/steps.ts"
-    ]
+    features: './features/*.feature',
+    steps: ['./step_definitions/steps.ts'],
   },
   include: {
-    I: './steps_file'
+    I: './steps_file',
   },
-  name: 'tests'
-}
+  name: 'tests',
+};
