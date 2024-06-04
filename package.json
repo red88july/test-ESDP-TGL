@@ -4,8 +4,6 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "npx codeceptjs run --steps",
-    "lint": "eslint */*.ts",
     "format": "prettier --write .",
     "format:check": "prettier --check ."
   },
@@ -14,6 +12,7 @@
   "license": "ISC",
   "dependencies": {
     "codeceptjs": "^3.6.2",
+    "pm2": "^5.4.0",
     "puppeteer": "^22.9.0"
   },
   "devDependencies": {
