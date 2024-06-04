@@ -4,8 +4,6 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "npx codeceptjs run --steps",
-    "lint": "eslint */*.ts",
     "format": "prettier --write .",
     "format:check": "prettier --check ."
   },
