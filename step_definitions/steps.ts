@@ -20,7 +20,7 @@ When('я нажимаю на поле {string}', (value: string) => {
   I.click(value);
 });
 
-When('я выбираю значение {string} в поле {string}', async (value: string, label: string) => {
+When('я выбираю значение {string} в поле {string}', (value: string, label: string) => {
   I.click(label);
   I.click(`//li[contains(text(), "${value}")]`);
 });
