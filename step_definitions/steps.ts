@@ -70,3 +70,9 @@ Then('я вижу текст {string} в поле {string}', (value: string, lab
   I.seeInField(label, value);
 });
 
+Then('я очищаю поле телефона', async () => {
+  I.click('#phoneNumber');
+  for (let i = 0; i < 11; i++) {
+    I.pressKey('Backspace');
+  }
+});
