@@ -68,3 +68,7 @@ When('я нажимаю на пункт меню {string}', (label: string) => {
 Then('я вижу пустое значение в поле {string}', (label: string) => {
   I.seeInField(label, '');
 });
+
+Then('я не вижу сообщение {string}', (text: string) => {
+  I.dontSee(text);
+});
