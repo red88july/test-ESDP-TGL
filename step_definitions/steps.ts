@@ -41,10 +41,13 @@ Then('я вижу сообщение {string}', (text: string) => {
   I.see(text);
 });
 
+Then('я жду 5 секунд', () => {
+  I.wait(5);
+});
+
 Then('я жду 1 секунду', () => {
   I.wait(1);
 });
-
 
 Then('я перенаправляюсь на страницу {string}', (page: string) => {
   I.seeInCurrentUrl(page);
@@ -70,3 +73,6 @@ Then('я вижу текст {string} в поле {string}', (value: string, lab
   I.seeInField(label, value);
 });
 
+Then('я не вижу сообщение {string}', (text: string) => {
+  I.dontSee(text);
+});
