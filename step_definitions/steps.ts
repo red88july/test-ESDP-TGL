@@ -33,6 +33,8 @@ When('я нажимаю на кнопку {string}', (label: string) => {
   I.click(`//button[contains(text(),'${label}')]`);
 });
 
+
+
 When('я кликаю по cсылке {string}', (link: string) => {
   I.click(`//a[contains(text(),"${link}")]`);
 });
@@ -55,6 +57,18 @@ Then('я жду 2 секунды', () => {
 
 Then('я вижу текст в таблице {string}', (value: string) => {
   I.see(value, '//th');
+});
+
+Then('я вижу текст в инпуте {string}', (value: string) => {
+  I.seeInField(`//input[@value="${value}"]`, value);
+});
+
+Then('я удаляю текст в поле {string}', (value: string) => {
+  I.clearField(value);
+});
+
+When('я ввожу {string} в поле {string}', (value: string, label: string) => {
+  I.fillField(label, value);
 });
 
 When('я нажимаю на пункт меню {string}', (label: string) => {
