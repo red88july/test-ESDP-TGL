@@ -77,7 +77,7 @@ Then('я не вижу сообщение {string}', (text: string) => {
   I.dontSee(text);
 });
 
-Then('я очищаю поле телефона', async () => {
+Then('я очищаю поле телефона', () => {
   I.click('#phoneNumber');
   for (let i = 0; i < 11; i++) {
     I.pressKey('Backspace');
