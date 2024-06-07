@@ -83,6 +83,17 @@ Then('я вижу пустое значение в поле {string}', (label: s
   I.seeInField(label, '');
 });
 
+Then('я вижу текст {string} в поле {string}', (value: string, label: string) => {
+  I.seeInField(label, value);
+});
+
 Then('я не вижу сообщение {string}', (text: string) => {
   I.dontSee(text);
+});
+
+Then('я очищаю поле телефона', async () => {
+  I.click('#phoneNumber');
+  for (let i = 0; i < 11; i++) {
+    I.pressKey('Backspace');
+  }
 });
