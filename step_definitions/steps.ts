@@ -33,8 +33,6 @@ When('я нажимаю на кнопку {string}', (label: string) => {
   I.click(`//button[contains(text(),'${label}')]`);
 });
 
-
-
 When('я кликаю по cсылке {string}', (link: string) => {
   I.click(`//a[contains(text(),"${link}")]`);
 });
@@ -98,6 +96,20 @@ Then('я очищаю поле телефона', () => {
   }
 });
 
+When('я ввожу {string} в поле где name={string}', (value: string, name: string) => {
+  I.fillField(name, value);
+});
+
+When('я нажимаю на ссылку {string}', (text: string) => {
+  I.click(`//a[contains(text(),'${text}')]`);
+});
+When('я нажимаю на иконку {string}', (name) => {
+  I.click(`[data-testid=${name}]`);
+});
+When('я вижу инпут с name={string}', (id) => {
+  I.seeElement(`[name=${id}]`);
+});
+
 Then('я очищаю поле {string}', async (value: string) => {
   const field = `input[name="${value}"]`;
   I.click(field);
@@ -106,4 +118,3 @@ Then('я очищаю поле {string}', async (value: string) => {
   for (let i = 0; i < fieldLength; i++) {
     I.pressKey('Backspace');
   }
-});
