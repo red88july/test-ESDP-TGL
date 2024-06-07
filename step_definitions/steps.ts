@@ -97,3 +97,13 @@ Then('я очищаю поле телефона', () => {
     I.pressKey('Backspace');
   }
 });
+
+Then('я очищаю поле {string}', async (value: string) => {
+  const field = `input[name="${value}"]`;
+  I.click(field);
+  const fieldValue = await I.grabValueFrom(field);
+  const fieldLength = fieldValue.length;
+  for (let i = 0; i < fieldLength; i++) {
+    I.pressKey('Backspace');
+  }
+});
