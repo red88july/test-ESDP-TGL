@@ -109,3 +109,12 @@ When('я нажимаю на иконку {string}', (name) => {
 When('я вижу инпут с name={string}', (id) => {
   I.seeElement(`[name=${id}]`);
 });
+
+Then('я очищаю поле {string}', async (value: string) => {
+  const field = `input[name="${value}"]`;
+  I.click(field);
+  const fieldValue = await I.grabValueFrom(field);
+  const fieldLength = fieldValue.length;
+  for (let i = 0; i < fieldLength; i++) {
+    I.pressKey('Backspace');
+  }
