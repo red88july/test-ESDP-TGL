@@ -7,7 +7,7 @@ Given('Я нахожусь на странице {string}', (page: string) => {
 Given('Я авторизован как супер-админ', () => {
   I.amOnPage('/login');
   I.fillField('Email', 'super@gmail.com');
-  I.fillField('Пароль', 'sadykow200');
+  I.fillField('Пароль', 'qwerty');
   I.click(`//button[contains(text(),'Войти')]`);
   I.seeInCurrentUrl('/admin-profile/statistics');
 });
