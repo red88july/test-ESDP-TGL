@@ -118,3 +118,8 @@ Then('я очищаю поле {string}', async (value: string) => {
   for (let i = 0; i < fieldLength; i++) {
     I.pressKey('Backspace');
   }
+});
+
+When('я загружаю изображение {string} в поле {string}', (filePath: string, label: string) => {
+  I.attachFile(`input[name="image"]`, filePath);
+});
