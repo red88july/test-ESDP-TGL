@@ -7,7 +7,7 @@ Given('Я нахожусь на странице {string}', (page: string) => {
 Given('Я авторизован как супер-админ', () => {
   I.amOnPage('/login');
   I.fillField('Email', 'super@gmail.com');
-  I.fillField('Пароль', 'qwerty');
+  I.fillField('Пароль', 'sadykow200');
   I.click(`//button[contains(text(),'Войти')]`);
   I.seeInCurrentUrl('/admin-profile/statistics');
 });
@@ -118,3 +118,8 @@ Then('я очищаю поле {string}', async (value: string) => {
   for (let i = 0; i < fieldLength; i++) {
     I.pressKey('Backspace');
   }
+});
+
+When('я загружаю изображение {string} в поле {string}', (filePath: string, label: string) => {
+  I.attachFile(`input[name="image"]`, filePath);
+});
