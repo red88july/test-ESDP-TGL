@@ -123,3 +123,48 @@ Then('я очищаю поле {string}', async (value: string) => {
 When('я загружаю изображение {string} в поле {string}', (filePath: string, label: string) => {
   I.attachFile(`input[name="image"]`, filePath);
 });
+
+When('я нажимаю на кнопку "Редактировать" рядом с ПВЗ№1 с адресом "ул. Абраимова 52"', () => {
+  I.click('//tr[td[contains(text(), "ул. Абраимова 52")]]//button[contains(text(), "Редактировать")]');
+});
+
+When('я нажимаю на иконку удаления', () => {
+  I.click('button:has(svg[data-testid="CancelIcon"])');
+});
+
+// Given('я авторизован как супер-админ', () => {
+//   I.amOnPage('/login');
+//   I.fillField('Email', 'super@gmail.com');
+//   I.fillField('Пароль', 'qwerty');
+//   I.click(`//button[contains(text(),'Войти')]`);
+//   I.seeInCurrentUrl('/admin-profile/statistics');
+// });
+//
+// When('я нажимаю на пункт меню {string}', (menuItem: string) => {
+//   I.click(`//span[contains(text(),'${menuItem}')]`);
+// });
+//
+// Then('я перенаправляюсь на страницу {string}', (pageUrl: string) => {
+//   I.seeInCurrentUrl(pageUrl);
+// });
+//
+// When('я нажимаю на кнопку {string}', (buttonName: string) => {
+//   I.click(`//button[contains(text(),'${buttonName}')]`);
+// });
+//
+// Then('я вижу сообщение {string}', (message: string) => {
+//   I.see(message);
+// });
+//
+// When('я выбираю значение {string} в поле {string}', (value: string, field: string) => {
+//   I.click(field);
+//   I.click(`//li[contains(text(), "${value}")]`);
+// });
+//
+// When('я жду 1 секунду', () => {
+//   I.wait(1);
+// });
+//
+// When('я ввожу {string} в поле {string}', (text, field) => {
+//   // Логика для ввода текста в поле
+// });
