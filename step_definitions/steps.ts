@@ -118,3 +118,4 @@ Then('я очищаю поле {string}', async (value: string) => {
   for (let i = 0; i < fieldLength; i++) {
     I.pressKey('Backspace');
   }
+});
