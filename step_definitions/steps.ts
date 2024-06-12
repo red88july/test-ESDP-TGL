@@ -119,3 +119,7 @@ Then('я очищаю поле {string}', async (value: string) => {
     I.pressKey('Backspace');
   }
 });
+When('я загружаю изображение {string} в поле {string}', (filePath: string, label: string) => {
+  I.attachFile(`input[name="image"]`, filePath);
+});
+
