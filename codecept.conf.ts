@@ -13,17 +13,10 @@ export const config: CodeceptJS.MainConfig = {
     Puppeteer: {
       url: 'http://localhost:5183',
       show: true,
+
       windowSize: '1200x900',
       chrome: {
-        args: [
-          '--disable-web-security',
-          '--disable-features=IsolateOrigins,site-per-process',
-          '--allow-insecure-localhost',
-          '--disable-password-generation',
-          '--disable-save-password-bubble',
-          '--disable-popup-blocking',
-          '--disable-notifications',
-        ],
+        args: ['--incognito'],
       },
     },
   },
