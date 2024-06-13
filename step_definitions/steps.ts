@@ -123,3 +123,11 @@ Then('я очищаю поле {string}', async (value: string) => {
 When('я загружаю изображение {string} в поле {string}', (filePath: string, label: string) => {
   I.attachFile(`input[name="image"]`, filePath);
 });
+
+When('я нажимаю на кнопку "Редактировать" рядом с ПВЗ№1 с адресом "ул. Абраимова 52"', () => {
+  I.click('//tr[td[contains(text(), "ул. Абраимова 52")]]//button[contains(text(), "Редактировать")]');
+});
+
+When('я нажимаю на иконку удаления', () => {
+  I.click('button:has(svg[data-testid="CancelIcon"])');
+});
