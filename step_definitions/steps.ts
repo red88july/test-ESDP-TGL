@@ -1,4 +1,4 @@
-const { I } = inject();
+const {I} = inject();
 
 Given('Я нахожусь на странице {string}', (page: string) => {
   I.amOnPage(page);
@@ -122,4 +122,15 @@ Then('я очищаю поле {string}', async (value: string) => {
 
 When('я загружаю изображение {string} в поле {string}', (filePath: string, label: string) => {
   I.attachFile(`input[name="image"]`, filePath);
+});
+Then('я жду 3 секунду', () => {
+  I.wait(3)
+});
+
+Then('я нажимаю на имя пользователя в правом верхнем углу экрана', () => {
+  I.click('#username');
+});
+
+Then('я нажимаю на элемент меню {string}', (text: string) => {
+  I.click(`//li[contains(text(),'${text}')]`);
 });
