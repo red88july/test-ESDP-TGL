@@ -12,6 +12,14 @@ Given('Я авторизован как супер-админ', () => {
   I.seeInCurrentUrl('/admin-profile/statistics');
 });
 
+Given('Я авторизован как клиент', () => {
+  I.amOnPage('/login');
+  I.fillField('Email', 'user1@gmail.com');
+  I.fillField('Пароль', 'qwerty');
+  I.click(`//button[contains(text(),'Войти')]`);
+  I.seeInCurrentUrl('/profile/information');
+});
+
 When('я ввожу {string} в поле {string}', (value: string, label: string) => {
   I.fillField(label, value);
 });
@@ -137,7 +145,9 @@ Then('я нажимаю на элемент меню {string}', (text: string) =
 });
 
 When('я нажимаю на кнопку "Редактировать" рядом с ПВЗ№1 с адресом "ул. Абраимова 52"', () => {
-  I.click('//tr[td[contains(text(), "ул. Абраимова 52")]]//button[contains(text(), "Редактировать")]');
+  I.click(
+    '//tr[td[contains(text(), "ул. Абраимова 52")]]//button[contains(text(), "Редактировать")]',
+  );
 });
 
 When('я нажимаю на иконку удаления', () => {
