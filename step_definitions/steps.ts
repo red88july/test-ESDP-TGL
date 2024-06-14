@@ -123,3 +123,20 @@ Then('я очищаю поле {string}', async (value: string) => {
 When('я загружаю изображение {string} в поле {string}', (filePath: string, label: string) => {
   I.attachFile(`input[name="image"]`, filePath);
 });
+
+When(
+  'я получаю id из ячейки {int} и вставляю в поле {string}',
+  async (cellNumber: number, label: string) => {
+    const id = await I.grabTextFrom(
+      `//table/tbody/tr[position() = 3]/td[position() = ${cellNumber}]`,
+    );
+    I.fillField(label, id);
+  },
+);
+
+When(
+  'я вижу результат поиска со значением {string} в ячейке {int}',
+  (value: string, cellNumber: number) => {
+    I.see(value, `//tr/td[${cellNumber}]`);
+  },
+);
