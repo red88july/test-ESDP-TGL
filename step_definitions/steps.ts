@@ -1,4 +1,4 @@
-const {I} = inject();
+const { I } = inject();
 
 Given('Я нахожусь на странице {string}', (page: string) => {
   I.amOnPage(page);
@@ -7,7 +7,7 @@ Given('Я нахожусь на странице {string}', (page: string) => {
 Given('Я авторизован как супер-админ', () => {
   I.amOnPage('/login');
   I.fillField('Email', 'super@gmail.com');
-  I.fillField('Пароль', 'qwerty');
+  I.fillField('Пароль', 'jSPJJB2X');
   I.click(`//button[contains(text(),'Войти')]`);
   I.seeInCurrentUrl('/admin-profile/statistics');
 });
@@ -119,6 +119,7 @@ Then('я очищаю поле {string}', async (value: string) => {
     I.pressKey('Backspace');
   }
 });
+
 When('я загружаю изображение {string} в поле {string}', (filePath: string, label: string) => {
   I.attachFile(`input[name="image"]`, filePath);
 });
@@ -141,4 +142,25 @@ When('я нажимаю на кнопку "Редактировать" рядо�
 
 When('я нажимаю на иконку удаления', () => {
   I.click('button:has(svg[data-testid="CancelIcon"])');
+});
+
+When(
+  'я получаю id из ячейки {int} и вставляю в поле {string}',
+  async (cellNumber: number, label: string) => {
+    const id = await I.grabTextFrom(
+      `//table/tbody/tr[position() = 3]/td[position() = ${cellNumber}]`,
+    );
+    I.fillField(label, id);
+  },
+);
+
+When(
+  'я вижу результат поиска со значением {string} в ячейке {int}',
+  (value: string, cellNumber: number) => {
+    I.see(value, `//tr/td[${cellNumber}]`);
+  },
+);
+
+When('я не вижу удаленного пользователя {string}', (value: string) => {
+  I.dontSee(value, `//tr/td[5]`);
 });
