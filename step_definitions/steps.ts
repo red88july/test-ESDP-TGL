@@ -124,6 +124,26 @@ When('я загружаю изображение {string} в поле {string}',
   I.attachFile(`input[name="image"]`, filePath);
 });
 
+Then('я жду 3 секунду', () => {
+  I.wait(3)
+});
+
+Then('я нажимаю на имя пользователя в правом верхнем углу экрана', () => {
+  I.click('#username');
+});
+
+Then('я нажимаю на элемент меню {string}', (text: string) => {
+  I.click(`//li[contains(text(),'${text}')]`);
+});
+
+When('я нажимаю на кнопку "Редактировать" рядом с ПВЗ№1 с адресом "ул. Абраимова 52"', () => {
+  I.click('//tr[td[contains(text(), "ул. Абраимова 52")]]//button[contains(text(), "Редактировать")]');
+});
+
+When('я нажимаю на иконку удаления', () => {
+  I.click('button:has(svg[data-testid="CancelIcon"])');
+});
+
 When(
   'я получаю id из ячейки {int} и вставляю в поле {string}',
   async (cellNumber: number, label: string) => {
