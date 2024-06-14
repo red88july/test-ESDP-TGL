@@ -7,7 +7,7 @@ Given('Я нахожусь на странице {string}', (page: string) => {
 Given('Я авторизован как супер-админ', () => {
   I.amOnPage('/login');
   I.fillField('Email', 'super@gmail.com');
-  I.fillField('Пароль', 'qwerty');
+  I.fillField('Пароль', 'jSPJJB2X');
   I.click(`//button[contains(text(),'Войти')]`);
   I.seeInCurrentUrl('/admin-profile/statistics');
 });
@@ -140,3 +140,7 @@ When(
     I.see(value, `//tr/td[${cellNumber}]`);
   },
 );
+
+When('я не вижу удаленного пользователя {string}', (value: string) => {
+  I.dontSee(value, `//tr/td[5]`);
+});
