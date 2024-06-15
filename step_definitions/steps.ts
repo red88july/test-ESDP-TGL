@@ -128,12 +128,12 @@ Then('я очищаю поле {string}', async (value: string) => {
   }
 });
 
-When('я загружаю изображение {string} в поле {string}', (filePath: string, label: string) => {
+When('я загружаю изображение {string} в поле {string}', (filePath: string) => {
   I.attachFile(`input[name="image"]`, filePath);
 });
 
 Then('я жду 3 секунду', () => {
-  I.wait(3)
+  I.wait(3);
 });
 
 Then('я нажимаю на имя пользователя в правом верхнем углу экрана', () => {
