@@ -180,7 +180,3 @@ When('я нажимаю на кнопку {string} в таблице', (label: s
     `//table/tbody/tr[position() = 7]/td[position() = 8]//button[contains(text(),'${label}')]`,
   );
 });
-
-When('я не вижу значение {string} в поле {string}', (value: string, field: string) => {
-  I.dontSeeInField(field, value);
-});
