@@ -14,8 +14,8 @@ Given('Я авторизован как супер-админ', () => {
 
 Given('Я авторизован как клиент', () => {
   I.amOnPage('/login');
-  I.fillField('Email', 'user1@gmail.com');
-  I.fillField('Пароль', 'qwerty');
+  I.fillField('Email', 'user23@gmail.com');
+  I.fillField('Пароль', 'jSPJJB2X');
   I.click(`//button[contains(text(),'Войти')]`);
   I.seeInCurrentUrl('/profile/information');
 });
@@ -167,10 +167,16 @@ When(
 When(
   'я вижу результат поиска со значением {string} в ячейке {int}',
   (value: string, cellNumber: number) => {
-    I.see(value, `//tr/td[${cellNumber}]`);
+    I.see(value, `//table/tbody/tr/td[${cellNumber}]`);
   },
 );
 
-When('я не вижу удаленного пользователя {string}', (value: string) => {
-  I.dontSee(value, `//tr/td[5]`);
+When('я не вижу удаленного пользователя {string} в таблице', (value: string) => {
+  I.dontSee(value, `//table/tbody/tr[position() = 7]/td[position() = 6]`);
+});
+
+When('я нажимаю на кнопку {string} в таблице', (label: string) => {
+  I.click(
+    `//table/tbody/tr[position() = 7]/td[position() = 8]//button[contains(text(),'${label}')]`,
+  );
 });
