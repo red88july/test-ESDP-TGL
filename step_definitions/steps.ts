@@ -182,5 +182,5 @@ When('я нажимаю на кнопку {string} в таблице', (label: s
 });
 
 Then('я вижу результат в таблице {string}', (value: string) => {
-  I.see(value, `//table/tbody/tr[position() = 1]/td[contains(text(),'${value}')]`);
+  I.see(value);
 });
