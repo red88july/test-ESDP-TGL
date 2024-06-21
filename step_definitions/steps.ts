@@ -180,3 +180,7 @@ When('я нажимаю на кнопку {string} в таблице', (label: s
     `//table/tbody/tr[position() = 7]/td[position() = 8]//button[contains(text(),'${label}')]`,
   );
 });
+
+Then('я вижу результат в таблице {string}', (value: string) => {
+  I.see(value, `//table/tbody/tr[1]/td[2]`);
+});
