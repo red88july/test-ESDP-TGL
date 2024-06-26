@@ -1,4 +1,4 @@
-const {I} = inject();
+const { I } = inject();
 
 Given('Я нахожусь на странице {string}', (page: string) => {
   I.amOnPage(page);
@@ -7,15 +7,15 @@ Given('Я нахожусь на странице {string}', (page: string) => {
 Given('Я авторизован как супер-админ', () => {
   I.amOnPage('/login');
   I.fillField('Email', 'super@gmail.com');
-  I.fillField('Пароль', 'qwerty');
+  I.fillField('Пароль', 'jSPJJB2X');
   I.click(`//button[contains(text(),'Войти')]`);
   I.seeInCurrentUrl('/admin-profile/statistics');
 });
 
 Given('Я авторизован как клиент', () => {
   I.amOnPage('/login');
-  I.fillField('Email', 'user1@gmail.com');
-  I.fillField('Пароль', 'qwerty');
+  I.fillField('Email', 'user23@gmail.com');
+  I.fillField('Пароль', 'jSPJJB2X');
   I.click(`//button[contains(text(),'Войти')]`);
   I.seeInCurrentUrl('/profile/information');
 });
@@ -127,12 +127,13 @@ Then('я очищаю поле {string}', async (value: string) => {
     I.pressKey('Backspace');
   }
 });
-When('я загружаю изображение {string} в поле {string}', (filePath: string, label: string) => {
+
+When('я загружаю изображение {string} в поле {string}', (filePath: string) => {
   I.attachFile(`input[name="image"]`, filePath);
 });
 
 Then('я жду 3 секунду', () => {
-  I.wait(3)
+  I.wait(3);
 });
 
 Then('я нажимаю на имя пользователя в правом верхнем углу экрана', () => {
@@ -151,4 +152,35 @@ When('я нажимаю на кнопку "Редактировать" рядо�
 
 When('я нажимаю на иконку удаления', () => {
   I.click('button:has(svg[data-testid="CancelIcon"])');
+});
+
+When(
+  'я получаю id из ячейки {int} и вставляю в поле {string}',
+  async (cellNumber: number, label: string) => {
+    const id = await I.grabTextFrom(
+      `//table/tbody/tr[position() = 3]/td[position() = ${cellNumber}]`,
+    );
+    I.fillField(label, id);
+  },
+);
+
+When(
+  'я вижу результат поиска со значением {string} в ячейке {int}',
+  (value: string, cellNumber: number) => {
+    I.see(value, `//table/tbody/tr/td[${cellNumber}]`);
+  },
+);
+
+When('я не вижу удаленного пользователя {string} в таблице', (value: string) => {
+  I.dontSee(value, `//table/tbody/tr[position() = 7]/td[position() = 6]`);
+});
+
+When('я нажимаю на кнопку {string} в таблице', (label: string) => {
+  I.click(
+    `//table/tbody/tr[position() = 7]/td[position() = 8]//button[contains(text(),'${label}')]`,
+  );
+});
+
+Then('я вижу результат в таблице {string}', (value: string) => {
+  I.see(value);
 });
